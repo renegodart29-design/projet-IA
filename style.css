@@ -119,3 +119,10 @@ h1 {
 .empty-message.hidden {
   display: none;
 }
+
+.task-count {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 1.2rem 0 0;
+}

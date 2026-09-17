@@ -4,6 +4,7 @@ const form = document.getElementById("task-form");
 const input = document.getElementById("task-input");
 const list = document.getElementById("task-list");
 const emptyMessage = document.getElementById("empty-message");
+const taskCount = document.getElementById("task-count");
 
 let tasks = loadTasks();
 
@@ -42,6 +43,15 @@ function render() {
   });
 
   emptyMessage.classList.toggle("hidden", tasks.length > 0);
+
+  const remaining = tasks.filter((t) => !t.done).length;
+  if (tasks.length === 0) {
+    taskCount.textContent = "";
+  } else if (remaining === 0) {
+    taskCount.textContent = "Toutes les tâches sont terminées !";
+  } else {
+    taskCount.textContent = `${remaining} tâche${remaining > 1 ? "s" : ""} restante${remaining > 1 ? "s" : ""}`;
+  }
 }
 
 function addTask(text) {
