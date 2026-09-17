@@ -120,9 +120,35 @@ h1 {
   display: none;
 }
 
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
 .task-count {
   text-align: center;
   color: #6b7280;
   font-size: 0.9rem;
-  margin: 1.2rem 0 0;
+  margin: 0;
+}
+
+.clear-done {
+  border: none;
+  background: transparent;
+  color: #6366f1;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.2rem;
+}
+
+.clear-done:hover {
+  color: #4f46e5;
+}
+
+.clear-done.hidden {
+  display: none;
 }

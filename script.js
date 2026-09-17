@@ -5,6 +5,7 @@ const input = document.getElementById("task-input");
 const list = document.getElementById("task-list");
 const emptyMessage = document.getElementById("empty-message");
 const taskCount = document.getElementById("task-count");
+const clearDoneBtn = document.getElementById("clear-done");
 
 let tasks = loadTasks();
 
@@ -52,6 +53,8 @@ function render() {
   } else {
     taskCount.textContent = `${remaining} tâche${remaining > 1 ? "s" : ""} restante${remaining > 1 ? "s" : ""}`;
   }
+
+  clearDoneBtn.classList.toggle("hidden", !tasks.some((t) => t.done));
 }
 
 function addTask(text) {
@@ -73,6 +76,12 @@ function deleteTask(id) {
   render();
 }
 
+function clearDone() {
+  tasks = tasks.filter((t) => !t.done);
+  saveTasks();
+  render();
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const text = input.value.trim();
@@ -81,5 +90,7 @@ form.addEventListener("submit", (event) => {
   input.value = "";
   input.focus();
 });
+
+clearDoneBtn.addEventListener("click", clearDone);
 
 render();
