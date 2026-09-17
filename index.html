@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma liste de tâches</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Ma liste de tâches</h1>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Ajouter une tâche..." autocomplete="off">
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <ul id="task-list"></ul>
+
+    <p id="empty-message" class="empty-message">Aucune tâche pour le moment. Ajoutes-en une !</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
